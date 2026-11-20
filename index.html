@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sini Jain — Senior Angular Developer</title>
+<meta name="description" content="Senior Angular & Ionic developer with 8 years building secure digital banking apps for Deutsche Bank. Angular 20, TypeScript, RxJS, NgRx, payments, fintech.">
+<meta property="og:title" content="Sini Jain — Senior Angular Developer">
+<meta property="og:description" content="8 years building secure web and mobile banking apps. Angular · Ionic · RxJS · NgRx · Payments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --ink:#15181d; --muted:#5b6370; --line:#e3dfd6;
+  --accent:#c2410c; --accent-soft:#fdeee5; --navy:#1e3a5f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101317; --surface:#171b21; --ink:#eef0f3; --muted:#9aa3b0; --line:#262c35;
+    --accent:#f97316; --accent-soft:#2a1a10; --navy:#8fb3dd;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101317; --surface:#171b21; --ink:#eef0f3; --muted:#9aa3b0; --line:#262c35;
+  --accent:#f97316; --accent-soft:#2a1a10; --navy:#8fb3dd;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;letter-spacing:-.01em;line-height:1.15}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font-family:Fraunces,serif;font-weight:650;text-decoration:none;font-size:1.1rem}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;width:34px;height:34px;cursor:pointer;margin-left:16px}
+
+/* hero */
+.hero{padding:96px 0 72px}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin:14px 0 20px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--line)}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted);margin-top:28px}
+.status i{width:8px;height:8px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 4px color-mix(in srgb,#16a34a 25%,transparent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.stat{padding:26px 22px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:Fraunces,serif;font-size:2.2rem;font-weight:650;color:var(--navy)}
+.stat span{font-size:.88rem;color:var(--muted)}
+
+section{padding:88px 0 0}
+section > .wrap > h2{font-size:clamp(1.8rem,3.5vw,2.4rem);margin:8px 0 36px}
+
+/* work */
+.job{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line)}
+.job .when{color:var(--muted);font-size:.9rem}
+.job .when strong{display:block;color:var(--ink);font-weight:600}
+.job h3{font-size:1.35rem;margin-bottom:4px}
+.job .proj{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.job ul{padding-left:18px}
+.job li{margin:6px 0}
+.job li::marker{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-size:.78rem;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+
+/* case studies */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+.case h3{font-size:1.2rem;margin:10px 0 10px}
+.case p{color:var(--muted);font-size:.95rem;flex:1}
+.case .result{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:.9rem}
+.case .result b{color:var(--navy)}
+
+/* projects */
+.project{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;text-decoration:none;color:inherit}
+.project:hover{border-color:var(--accent)}
+.project h3{font-size:1.5rem;margin:8px 0 10px}
+.project p{color:var(--muted);max-width:70ch}
+.project-link{font-weight:600;color:var(--accent);white-space:nowrap}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.skill-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.skill-row dt{font-weight:600;font-size:.92rem}
+.skill-row dd{color:var(--muted);font-size:.95rem}
+
+/* creds */
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{font-size:1.15rem;margin-bottom:14px}
+.card li{list-style:none;padding:10px 0;border-top:1px solid var(--line);font-size:.95rem}
+.card li:first-child{border-top:0;padding-top:0}
+.card li small{display:block;color:var(--muted)}
+
+/* contact */
+.contact{margin:96px 0 0;padding:64px 0;background:var(--ink);color:var(--bg)}
+.contact h2{font-size:clamp(1.8rem,4vw,2.8rem);max-width:18ch;margin:10px 0 18px}
+.contact p{opacity:.75;max-width:52ch}
+.contact .btn{border-color:color-mix(in srgb,var(--bg) 30%,transparent);color:var(--bg)}
+.contact .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+footer{padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+@media (max-width:820px){
+  nav ul{display:none}
+  .hero{padding:64px 0 48px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .job{grid-template-columns:1fr;gap:10px}
+  .cases,.skills,.creds,.project{grid-template-columns:1fr}
+  .skill-row{grid-template-columns:1fr;gap:4px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Sini Jain</a>
+    <div style="display:flex;align-items:center">
+      <ul>
+        <li><a href="#work">Experience</a></li>
+        <li><a href="#cases">Highlights</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="mono">Senior Angular Developer · Mumbai, India</div>
+    <h1>I build secure banking apps people <em>trust with their money.</em></h1>
+    <p class="lead">8 years shipping web and hybrid mobile apps with Angular, Ionic, TypeScript, RxJS and NgRx, most recently for Deutsche Bank's digital banking platforms in Belgium and India.</p>
+    <div class="cta">
+      <a class="btn primary" href="#contact">Get in touch →</a>
+      <a class="btn" href="Sini_Jain_Resume.pdf" download>Download résumé</a>
+      <a class="btn" href="https://www.linkedin.com/in/sinijain" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="status"><i></i>Open to senior Angular / frontend roles in fintech and product companies</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>8 yrs</b><span>Frontend & hybrid mobile</span></div>
+    <div class="stat"><b>100K+</b><span>Customers reached by payment integrations</span></div>
+    <div class="stat"><b>20%</b><span>Faster release cycle</span></div>
+    <div class="stat"><b>2</b><span>Deutsche Bank apps (BE & IN)</span></div>
+  </div>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="mono">Experience</div>
+    <h2>Where I've worked</h2>
+
+    <article class="job">
+      <div class="when"><strong>Tata Consultancy Services</strong>Aug 2022 — Present</div>
+      <div>
+        <h3>Senior Angular Developer</h3>
+        <div class="proj">MyBank Belgium · cross-platform digital banking app · Client: Deutsche Bank Belgium</div>
+        <ul>
+          <li>Built Angular & Ionic components for third-party beneficiary flows and Belgium-specific communications, cutting release cycle time by 20%.</li>
+          <li>Integrated the Payconiq wallet and multiple payment gateways, expanding payment options for 100K+ customers.</li>
+          <li>Kept delivery compliant with EU regulations (GDPR, AML directives) across the lifecycle; resolved Veracode audit findings.</li>
+          <li>Wrote .apk / .ipa build scripts for Android & iOS release automation.</li>
+          <li>Led code reviews, set coding standards and mentored junior developers.</li>
+        </ul>
+        <div class="tags"><span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">Capacitor</span><span class="tag">NgRx</span><span class="tag">Payconiq</span><span class="tag">Veracode</span></div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><strong>ForaySoft Pvt. Ltd.</strong>Jul 2021 — Jul 2022</div>
+      <div>
+        <h3>Angular & Ionic Developer</h3>
+        <div class="proj">MyBank India · hybrid mobile banking app · Client: Deutsche Bank India</div>
+        <ul>
+          <li>Owned end-to-end development of a hybrid banking app handling digital transactions for Indian retail customers.</li>
+          <li>Integrated UPI and BillDesk for secure real-time payments in line with RBI guidelines.</li>
+          <li>Partnered with Perfios to integrate lending solutions into the app.</li>
+          <li>Automated build & release; managed store releases to Apple and Google standards.</li>
+        </ul>
+        <div class="tags"><span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">Cordova</span><span class="tag">UPI</span><span class="tag">BillDesk</span></div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><strong>CREATES, IISER Bhopal</strong>Jul 2018 — May 2021</div>
+      <div>
+        <h3>Web Developer (Frontend)</h3>
+        <div class="proj">Examineer · digital assessment platform for educators</div>
+        <ul>
+          <li>Built multimedia quizzes (video, PDF, images, charts) with synchronous and asynchronous modes.</li>
+          <li>Designed a flexible content canvas supporting multi-section quiz formats.</li>
+          <li>Supported SIT/UAT cycles and production deployments.</li>
+        </ul>
+        <div class="tags"><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">EdTech</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="mono">Highlights</div>
+    <h2>Selected work</h2>
+    <div class="cases">
+      <div class="case">
+        <div class="mono">Payments</div>
+        <h3>Payconiq wallet for MyBank Belgium</h3>
+        <p>Brought a popular Belgian mobile wallet into the bank's app alongside existing gateways, with secure flows built to EU compliance standards.</p>
+        <div class="result"><b>100K+</b> customers gained new ways to pay</div>
+      </div>
+      <div class="case">
+        <div class="mono">Delivery</div>
+        <h3>Faster, safer releases</h3>
+        <p>Reusable beneficiary components plus scripted Android/iOS builds removed manual steps from every release.</p>
+        <div class="result"><b>20%</b> shorter release cycle</div>
+      </div>
+      <div class="case">
+        <div class="mono">India · UPI</div>
+        <h3>Real-time payments, RBI-ready</h3>
+        <p>Integrated UPI and BillDesk into a hybrid banking app and connected Perfios lending, owning the build end to end.</p>
+        <div class="result"><b>End-to-end</b> ownership from code to store</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="mono">Open source</div>
+    <h2>Projects</h2>
+    <a class="project" href="https://github.com/sinijain/bank-ui-kit" target="_blank" rel="noopener">
+      <div>
+        <div class="mono">Personal project · GitHub</div>
+        <h3>Bank UI Kit</h3>
+        <p>An accessible banking dashboard and component library. Design tokens from Style Dictionary drive Tailwind and a Lit web component; Storybook documents every component; data comes over Apollo GraphQL; login uses OpenID Connect. Covered by Jasmine/Karma unit tests and Playwright end-to-end tests with an axe-core WCAG 2.1 AA scan.</p>
+        <div class="tags"><span class="tag">Angular</span><span class="tag">Storybook</span><span class="tag">Tailwind</span><span class="tag">Style Dictionary</span><span class="tag">Lit</span><span class="tag">Apollo GraphQL</span><span class="tag">OIDC</span><span class="tag">Playwright + axe</span></div>
+      </div>
+      <span class="project-link">View code →</span>
+    </a>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="mono">Toolkit</div>
+    <h2>Skills</h2>
+    <dl class="skills">
+      <div class="skill-row"><dt>Frontend</dt><dd>Angular 20, TypeScript, JavaScript (ES6+), HTML5, CSS3, SASS</dd></div>
+      <div class="skill-row"><dt>Mobile</dt><dd>Ionic 7, Capacitor, Cordova, Android & iOS hybrid apps</dd></div>
+      <div class="skill-row"><dt>State & data</dt><dd>RxJS, NgRx, Node.js, NPM</dd></div>
+      <div class="skill-row"><dt>Quality</dt><dd>Jasmine, Karma, code review, Veracode remediation</dd></div>
+      <div class="skill-row"><dt>Fintech</dt><dd>UPI, BillDesk, Payconiq, GDPR, AML, RBI compliance</dd></div>
+      <div class="skill-row"><dt>AI-assisted dev</dt><dd>Claude, GitHub Copilot, Google Gemini</dd></div>
+      <div class="skill-row"><dt>Design</dt><dd>Figma, UI/UX principles</dd></div>
+      <div class="skill-row"><dt>Ways of working</dt><dd>Agile, Scrum, JIRA, mentoring</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="mono">Credentials</div>
+    <h2>Education & certifications</h2>
+    <div class="creds">
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul>
+          <li>Claude Certified Architect — Professional<small>Anthropic</small></li>
+          <li>Anti-Financial Crime, AML & Counter Terrorist Financing<small>Deutsche Bank</small></li>
+          <li>Sanctions Essentials; Data Protection, Privacy & Records Management<small>Deutsche Bank</small></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <ul>
+          <li>Master of Computer Applications (MCA) · CGPA 8.4<small>Samrat Ashok Technological Institute, RGPV, Bhopal</small></li>
+          <li>Bachelor of Computer Applications (BCA)<small>Rajeev Gandhi College, Barkatullah University, Bhopal</small></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="mono">Contact</div>
+    <h2>Building something in fintech? Let's talk.</h2>
+    <p>I'm open to senior Angular and frontend roles, in Mumbai or remote. The fastest way to reach me is email or LinkedIn.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:sinijain154@gmail.com">sinijain154@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/sinijain" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/sinijain" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Sini Jain</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch(e){}
+document.getElementById('theme').onclick = () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch(e){}
+};
+</script>
+</body>
+</html>
